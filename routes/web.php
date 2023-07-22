@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('show');
-});
-Route::get('/add', function () {
-    return view('add');
-});
+Route::get('/', [PlayerController::class, 'index']);
+Route::get('/create', [PlayerController::class, 'create']);
+Route::delete('/{id}/delete', [PlayerController::class, 'delete']);
+Route::get('/{id}/update', [PlayerController::class, 'update']);
+// Route::put('/player/{id}/update-store', [PlayerController::class, 'updateStore']);
+Route::get('/{id}/show', [PlayerController::class, 'show']);
+Route::post('/store', [PlayerController::class, 'store']);
+
+// Route::resource('/team', TeamController::class);

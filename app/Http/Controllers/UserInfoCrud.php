@@ -10,7 +10,7 @@ class UserInfoCrud extends Controller
     {
         return view('show');
     }
-    public function add()
+    public function create()
     {
         return view('add');
     }
