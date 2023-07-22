@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Player;
+use App\Models\Post;
 use Faker\Guesser\Name;
 use App\Http\Controllers\Session;
 use App\Models\Teams;
@@ -17,10 +19,14 @@ class PlayerController extends Controller
         $players = Player::all();
          $players = Player::with('teams')->get();
          $teams = Teams::with('playerWithTeam')->get();
+         $posts = Post::with('categories')->get();
+         $categories = Category::with('post')->get();
+        //  return $categories;
+        return $posts;
         // return $players;
         // return $teams;
         // return view('index' , compact('players'));
-        return view('index' , compact('teams'));
+        // return view('index' , compact('teams'));
     }
     public function create()
     {

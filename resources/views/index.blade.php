@@ -86,10 +86,10 @@
                         ID
                     </th> --}}
                     <th  class="w-1/3 px-6 py-3">
-                         Team Name
+                        Post Category
                     </th>
                     <th  class="px-6 py-3">
-                        Players
+                        Post Title
                     </th>
                     {{-- <th scope="col" class="px-6 py-3">
                         City
@@ -100,6 +100,25 @@
 
                 </tr>
             </thead>
+            {{-- <tbody>
+                @foreach ($teams as $key => $team)
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            {{ $team->name }}
+                        </th>
+                        <td class="px-6 py-4">
+                            @foreach ($team->playerWithTeam as $players)
+                            {{$players->name}}
+                            @endforeach
+                        </td>
+
+
+
+                @endforeach
+                </tr>
+
+            </tbody> --}}
             <tbody>
                 @foreach ($teams as $key => $team)
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
