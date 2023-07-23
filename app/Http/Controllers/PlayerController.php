@@ -22,11 +22,12 @@ class PlayerController extends Controller
          $posts = Post::with('categories')->get();
          $categories = Category::with('post')->get();
         //  return $categories;
-        return $posts;
+        // return $posts;
         // return $players;
         // return $teams;
         // return view('index' , compact('players'));
         // return view('index' , compact('teams'));
+        return view('index' , compact('categories'));
     }
     public function create()
     {
