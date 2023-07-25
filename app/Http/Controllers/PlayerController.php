@@ -87,4 +87,11 @@ class PlayerController extends Controller
         return redirect('/')->with('msg', 'Data Update was Successful!');
         
     }
+
+    public function search(Request $request){
+        $data = Category::where('name' , 'like', '%'.$request->data.'%')->get();
+        // return view('update', compact('data') );
+        dd($data);
+        // return $data;
+    }
 }

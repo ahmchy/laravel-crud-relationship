@@ -22,5 +22,6 @@ Route::get('/{id}/update', [PlayerController::class, 'update']);
 // Route::put('/player/{id}/update-store', [PlayerController::class, 'updateStore']);
 Route::get('/{id}/show', [PlayerController::class, 'show']);
 Route::post('/store', [PlayerController::class, 'store']);
+Route::get('/search', [PlayerController::class, 'search'])->name('search');
 
 // Route::resource('/team', TeamController::class);
